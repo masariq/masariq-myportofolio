@@ -1,8 +1,32 @@
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight, Globe, Star } from "lucide-react";
+import { ArrowRight, MapPin, Clock, Globe, Star } from "lucide-react";
 import rafPhoto from "@assets/photo_website_rafi_1782623162685.png";
 
+function useLiveClock(timezone = "Asia/Jakarta") {
+  const [time, setTime] = useState("");
+  useEffect(() => {
+    const tick = () => {
+      setTime(
+        new Date().toLocaleTimeString("en-US", {
+          timeZone: timezone,
+          hour: "2-digit",
+          minute: "2-digit",
+          second: "2-digit",
+          hour12: true,
+        })
+      );
+    };
+    tick();
+    const id = setInterval(tick, 1000);
+    return () => clearInterval(id);
+  }, [timezone]);
+  return time;
+}
+
 export function Hero() {
+  const time = useLiveClock("Asia/Jakarta");
+
   return (
     <section id="home" className="min-h-[100dvh] pt-28 pb-16 flex flex-col items-center justify-center overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-5xl w-full">
@@ -43,11 +67,38 @@ export function Hero() {
           Creating custom websites and handling your social media with a personal touch, helping your global brand stand out and shine.
         </motion.p>
 
+        {/* Live status bar */}
+        <motion.div
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.22 }}
+          className="flex justify-center mb-8"
+        >
+          <div className="flex items-center gap-0 bg-background border border-border rounded-full shadow-sm overflow-hidden divide-x divide-border">
+            {/* Left — location */}
+            <div className="flex items-center gap-2.5 px-5 py-3">
+              <span className="w-2 h-2 rounded-full bg-green-500 flex-shrink-0" />
+              <MapPin size={13} className="text-muted-foreground flex-shrink-0" />
+              <span className="text-sm font-medium text-foreground whitespace-nowrap">
+                Live in Central Java, Indonesia
+              </span>
+            </div>
+            {/* Right — clock */}
+            <div className="flex items-center gap-2 px-5 py-3">
+              <Clock size={13} className="text-muted-foreground flex-shrink-0" />
+              <span className="text-sm font-medium text-foreground tabular-nums whitespace-nowrap">
+                {time}
+              </span>
+              <span className="text-sm text-muted-foreground whitespace-nowrap">(UTC+7)</span>
+            </div>
+          </div>
+        </motion.div>
+
         {/* CTAs */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.22 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-16"
         >
           <a
@@ -72,14 +123,14 @@ export function Hero() {
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.35 }}
+          transition={{ duration: 0.7, delay: 0.4 }}
           className="relative flex items-end justify-center gap-4 md:gap-6 h-[340px] md:h-[420px]"
         >
           {/* Left card */}
           <motion.div
             initial={{ opacity: 0, x: -30, rotate: -3 }}
             animate={{ opacity: 1, x: 0, rotate: -4 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
+            transition={{ duration: 0.7, delay: 0.55 }}
             className="hidden sm:flex flex-col justify-between w-[190px] md:w-[230px] h-[260px] md:h-[310px] bg-card border border-border rounded-2xl p-5 shadow-lg self-end mb-6 flex-shrink-0"
           >
             <div>
@@ -103,16 +154,14 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.42 }}
+            transition={{ duration: 0.7, delay: 0.47 }}
             className="relative flex-shrink-0 w-[200px] md:w-[250px] h-[300px] md:h-[380px] rounded-[2rem] overflow-hidden border-[6px] border-background shadow-[0_30px_80px_rgba(0,0,0,0.18)] bg-muted z-10"
-            style={{ boxShadow: "0 4px 6px -1px rgba(0,0,0,0.1), 0 30px 80px rgba(0,0,0,0.15)" }}
           >
             <img
               src={rafPhoto}
               alt="Rafi"
               className="w-full h-full object-cover object-top"
             />
-            {/* Bottom label */}
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/60 to-transparent p-4 pt-10">
               <p className="text-white text-sm font-semibold">Rafi</p>
               <p className="text-white/70 text-xs">Digital Specialist</p>
@@ -123,7 +172,7 @@ export function Hero() {
           <motion.div
             initial={{ opacity: 0, x: 30, rotate: 3 }}
             animate={{ opacity: 1, x: 0, rotate: 4 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
+            transition={{ duration: 0.7, delay: 0.55 }}
             className="hidden sm:flex flex-col justify-between w-[190px] md:w-[230px] h-[240px] md:h-[290px] bg-card border border-border rounded-2xl p-5 shadow-lg self-end mb-8 flex-shrink-0"
           >
             <div className="flex items-center gap-2 mb-3">
