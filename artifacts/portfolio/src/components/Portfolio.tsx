@@ -2,7 +2,7 @@ import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ExternalLink } from "lucide-react";
 
-type Category = "All" | "Web" | "Social" | "Video";
+type Category = "All" | "Web" | "Social";
 
 export function Portfolio() {
   const [activeTab, setActiveTab] = useState<Category>("All");
@@ -34,29 +34,22 @@ export function Portfolio() {
     },
     {
       id: 5,
-      title: "Product Launch Reel",
-      category: "Video",
-      image: "/images/video-1.png",
-    },
-    {
-      id: 6,
       title: "E-Commerce Experience",
       category: "Web",
       image: "/images/web-3.png",
     },
-    {
-      id: 7,
-      title: "Viral TikTok Series",
-      category: "Video",
-      image: "/images/video-2.png",
-    }
   ];
 
   const filteredProjects = activeTab === "All" 
     ? projects 
     : projects.filter(p => p.category === activeTab);
 
-  const tabs: Category[] = ["All", "Web", "Social", "Video"];
+  const tabs: Category[] = ["All", "Web", "Social"];
+  const tabLabels: Record<Category, string> = {
+    All: "All",
+    Web: "Web Development",
+    Social: "Social Media",
+  };
 
   return (
     <section id="portfolio" className="py-24">
@@ -64,7 +57,7 @@ export function Portfolio() {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
           <div>
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Selected Work.</h2>
-            <p className="text-muted-foreground text-lg max-w-xl">A curated selection of projects across web development, social media, and video production.</p>
+            <p className="text-muted-foreground text-lg max-w-xl">A curated selection of projects across website design & development and social media management.</p>
           </div>
           
           <div className="flex flex-wrap gap-2">
@@ -78,7 +71,7 @@ export function Portfolio() {
                     : "bg-muted text-muted-foreground hover:bg-muted/80"
                 }`}
               >
-                {tab}
+                {tabLabels[tab]}
               </button>
             ))}
           </div>
