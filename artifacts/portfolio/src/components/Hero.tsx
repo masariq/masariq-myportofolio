@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, FileText, Globe, Star } from "lucide-react";
+import { ArrowRight, Globe, Star } from "lucide-react";
 import rafPhoto from "@assets/photo_website_rafi_1782623162685.png";
 
 export function Hero() {
@@ -16,7 +16,7 @@ export function Hero() {
         >
           <div className="flex items-center gap-2 bg-green-500/15 border border-green-500/30 text-green-700 dark:text-green-400 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide shadow-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse inline-block" />
-            Available for Remote Work
+            Available for Remote Work & Projects
           </div>
         </motion.div>
 
@@ -27,11 +27,10 @@ export function Hero() {
           transition={{ duration: 0.55, delay: 0.08 }}
           className="text-center text-[clamp(2.4rem,6vw,4.5rem)] leading-[1.08] tracking-[-0.03em] mb-6"
         >
-          <span className="font-light text-muted-foreground">Digital specialist </span>
-          <span className="font-bold text-foreground">crafting</span>
+          <span className="font-bold text-foreground">Crafting Premium</span>
           <br />
-          <span className="font-bold text-foreground">premium online </span>
-          <span className="font-light text-muted-foreground">presence</span>
+          <span className="font-bold text-foreground">Digital Experiences </span>
+          <span className="font-light text-muted-foreground">for Modern Brands.</span>
         </motion.h1>
 
         {/* Subtext */}
@@ -41,7 +40,7 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.16 }}
           className="text-center text-sm md:text-base text-muted-foreground max-w-md mx-auto mb-8 leading-relaxed"
         >
-          From full-stack web development to viral short-form video production — blending technical execution with compelling visual storytelling.
+          Creating custom websites and handling your social media with a personal touch, helping your global brand stand out and shine.
         </motion.p>
 
         {/* CTAs */}
@@ -57,15 +56,15 @@ export function Hero() {
             className="flex items-center gap-2 bg-foreground text-background px-7 py-3 rounded-full font-medium text-sm hover:scale-[1.03] hover:bg-foreground/90 transition-all shadow-md"
             data-testid="button-hire"
           >
-            Hire My Services <ArrowRight size={15} />
+            Get in Touch <ArrowRight size={15} />
           </a>
           <a
-            href="#career"
-            onClick={(e) => { e.preventDefault(); document.querySelector("#career")?.scrollIntoView({ behavior: "smooth" }); }}
+            href="#portfolio"
+            onClick={(e) => { e.preventDefault(); document.querySelector("#portfolio")?.scrollIntoView({ behavior: "smooth" }); }}
             className="flex items-center gap-2 border border-border text-foreground px-7 py-3 rounded-full font-medium text-sm hover:bg-muted transition-colors"
-            data-testid="button-resume"
+            data-testid="button-portfolio"
           >
-            <FileText size={15} /> View Resume
+            Explore Portfolio
           </a>
         </motion.div>
 
