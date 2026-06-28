@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Code2, Share2, Video, ArrowUpRight } from "lucide-react";
+import { Code2, Share2, ArrowUpRight } from "lucide-react";
 
 const services = [
   {
@@ -35,22 +35,6 @@ const services = [
       "Account growth strategy",
     ],
   },
-  {
-    id: "video",
-    icon: Video,
-    label: "Video Editing",
-    headline: "High-retention short-form videos that stop the scroll.",
-    description:
-      "Dynamic editing for Reels, TikTok, and YouTube Shorts — with on-brand captions, color grading, transitions, and motion graphics. Trend-aware direction that keeps your content performing.",
-    tags: ["CapCut", "Premiere Pro", "After Effects", "Color Grading", "Subtitles", "Reels"],
-    deliverables: [
-      "Short-form video editing (Reels / TikTok / Shorts)",
-      "Custom captions & animated text",
-      "Color grading & visual tone",
-      "Motion graphics & transitions",
-      "Thumbnail design",
-    ],
-  },
 ];
 
 export function Services() {
@@ -76,7 +60,7 @@ export function Services() {
             An integrated approach<br />to digital presence.
           </h2>
           <p className="text-[clamp(1.2rem,2.5vw,1.6rem)] font-light text-background/40 leading-snug">
-            I build platforms, create and edit content,<br className="hidden md:block" /> and manage strategy.
+            I build platforms and manage your brand's<br className="hidden md:block" /> digital presence end-to-end.
           </p>
         </motion.div>
 
