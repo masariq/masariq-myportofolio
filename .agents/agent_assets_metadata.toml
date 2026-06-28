@@ -1,0 +1,50 @@
+uploads = []
+outputs = []
+
+[[generated]]
+id = "74T57ETQ8h9qlZ84mP92S"
+uri = "file://artifacts/portfolio/public/images/profile.png"
+type = "image"
+title = "Elegant profile portrait placeholder"
+
+[[generated]]
+id = "P3PNXUJePwNLWYHEIJzXl"
+uri = "file://artifacts/portfolio/public/images/web-1.png"
+type = "image"
+title = "Abstract website design mockup"
+
+[[generated]]
+id = "gOomCYmAnigTJMhkITY0Y"
+uri = "file://artifacts/portfolio/public/images/web-2.png"
+type = "image"
+title = "Clean editorial web interface"
+
+[[generated]]
+id = "JYk1faHgVlxJZUH8DjpWJ"
+uri = "file://artifacts/portfolio/public/images/web-3.png"
+type = "image"
+title = "E-commerce web layout mockup"
+
+[[generated]]
+id = "dCSbxRW4bEBH-_8HKg4w1"
+uri = "file://artifacts/portfolio/public/images/social-1.png"
+type = "image"
+title = "Instagram grid mockup visual"
+
+[[generated]]
+id = "uGWA4j85wlwJMngpbMpRL"
+uri = "file://artifacts/portfolio/public/images/social-2.png"
+type = "image"
+title = "Minimalist social campaign visual"
+
+[[generated]]
+id = "YQ_BoZYVM4yERmsSqVhwM"
+uri = "file://artifacts/portfolio/public/images/video-1.png"
+type = "image"
+title = "Video editing timeline visualization"
+
+[[generated]]
+id = "Hr2yU7dicjAbUVrNOASmU"
+uri = "file://artifacts/portfolio/public/images/video-2.png"
+type = "image"
+title = "Short-form video content mockup"

@@ -1,0 +1,22 @@
+Below I attach a reference for the portfolio website design that I want to build, and I want you to:
+Create a modern, ultra-clean single-page portfolio website for a digital specialist named "Rafi". The website must be fully written in English. The technical stack should use React and Tailwind CSS with smooth animations and polished transitions.
+
+Design System & Theme:
+- Concept: "Apple Look" aesthetic—highly minimalist, premium typography, precise container alignment, thin subtle borders, and generous whitespace or breathing room between sections.
+Layout and Components (structured from top to bottom):
+1. Sticky Navbar: Sleek translucent header with a glassy backdrop blur. Left side features the text logo "Rafi". Right side includes smooth navigation links (Home, Services, Portfolio, Career, Contact).
+2. Hero Section:
+   - A minimalist floating status badge centered at the top: "🟢 Available for Remote Work".
+   - High-impact, bold headline: "Building Premium Websites & Crafting Engaging Social Media Experiences."
+   - Clear subtext explaining your focus on web development, site management, and full-scale digital branding.
+   - Profile Picture: A clean, minimalist circular or rounded frame acting as a placeholder for a professional photo.
+   - Dual Call-to-Action (CTA) Buttons: "Hire My Services" (primary solid button with a subtle hover glow) and "View Resume / Recruit" (secondary outline button).
+3. Services Grid: A clean 3-card layout with smooth Apple-style scale hover effects:
+   - Card 1: Web Development & Management (Building and maintaining custom sites with modern tech and WordPress).
+   - Card 2: Social Media Branding (Creating visual feed designs for Instagram/TikTok and strategic content).
+   - Card 3: Short-Form Video Production (High-quality video editing tailored for Reels, TikTok, and YouTube Shorts).
+4. Portfolio Showcase: An interactive grid or Bento Grid layout featuring quick-action filter tabs (All, Web, Social Media, Video) to cleanly demonstrate project mockups.
+5. "Remote Ready" Section (Career): A dedicated area targeting global recruiters. Highlight your flexibility with international time zones, readiness for remote work, specialized workflow tools (such as Slack, Notion, GitHub, and Cursor).
+6. Contact Form & Footer: A minimalist, fully functional email/contact form alongside rapid action links directing to your WhatsApp and LinkedIn.
+
+Ensure the final application is robust, modern, clean, fully responsive across both mobile and desktop views, and completely optimized for clean rendering.
