@@ -1,63 +1,149 @@
+import { useRef } from "react";
 import { motion } from "framer-motion";
-import { Code2, Share2, Video } from "lucide-react";
+import rafPhoto from "@assets/photo_website_rafi_1782623162685.png";
+
+const services = [
+  {
+    category: "Platform",
+    title: "Web Development",
+    featured: false,
+  },
+  {
+    category: "Content",
+    title: "Social Media",
+    featured: true,
+  },
+  {
+    category: "Production",
+    title: "Video Editing",
+    featured: false,
+  },
+  {
+    category: "Creative",
+    title: "Web Design",
+    featured: false,
+  },
+  {
+    category: "Growth",
+    title: "Brand Strategy",
+    featured: false,
+  },
+  {
+    category: "Analytics",
+    title: "Performance",
+    featured: false,
+  },
+];
 
 export function Services() {
-  const services = [
-    {
-      icon: <Code2 size={32} strokeWidth={1.5} />,
-      title: "Web Development & Management",
-      description: "Full-cycle web creation from concept to deployment. High-performance, responsive sites built with modern frameworks and meticulous attention to detail.",
-      tags: ["React", "Next.js", "Tailwind CSS", "CMS"]
-    },
-    {
-      icon: <Share2 size={32} strokeWidth={1.5} />,
-      title: "Social Media Branding",
-      description: "Cohesive visual identity for social platforms. Engaging Instagram and TikTok feeds that convert followers into loyal community members.",
-      tags: ["Strategy", "Content Calendar", "Visual Identity", "Analytics"]
-    },
-    {
-      icon: <Video size={32} strokeWidth={1.5} />,
-      title: "Short-Form Video Production",
-      description: "High-retention video content for Reels, TikTok, and YouTube Shorts. Dynamic editing, captioning, and trend-aware direction.",
-      tags: ["Editing", "Color Grading", "Motion Graphics", "CapCut / Premiere"]
-    }
-  ];
+  const scrollRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section id="services" className="py-24 bg-muted/30">
-      <div className="container mx-auto px-6 md:px-12">
-        <div className="mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4">Core Competencies.</h2>
-          <p className="text-muted-foreground text-lg max-w-xl">A unified approach to digital presence. I build the platform, create the content, and manage the strategy.</p>
+    <section id="services" className="py-28 bg-foreground text-background overflow-hidden">
+      <div className="container mx-auto px-6 md:px-12 max-w-6xl">
+
+        {/* Top headline area */}
+        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto_1fr] gap-8 items-start mb-16">
+
+          {/* Left body text */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="text-sm text-background/50 leading-relaxed max-w-[220px] pt-2 hidden md:block"
+          >
+            From first sketch to final pixel — every service is built around measurable outcomes and lasting digital impact.
+          </motion.p>
+
+          {/* Center headline */}
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.55 }}
+            className="text-center"
+          >
+            <div className="flex items-center justify-center gap-2 mb-6">
+              <span className="text-xs font-semibold text-background/40 uppercase tracking-widest">Core Competencies</span>
+            </div>
+            <h2 className="text-[clamp(2rem,5vw,3.8rem)] font-bold leading-[1.08] tracking-[-0.03em]">
+              An integrated approach<br />
+              to digital presence.
+            </h2>
+            <p className="text-[clamp(1.6rem,4vw,3rem)] font-light text-background/35 leading-[1.1] tracking-[-0.02em] mt-2">
+              I build platforms, create<br />
+              and edit content, and<br className="hidden md:block" />
+              manage strategy.
+            </p>
+          </motion.div>
+
+          {/* Right body text */}
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5, delay: 0.15 }}
+            className="text-sm text-background/50 leading-relaxed max-w-[220px] pt-2 ml-auto text-right hidden md:block"
+          >
+            Building multi-channel strategies that connect your brand with the right audience, at the right time, every time.
+          </motion.p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map((service, index) => (
+        {/* Horizontal service cards */}
+        <motion.div
+          ref={scrollRef}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex gap-3 overflow-x-auto pb-2 -mx-2 px-2 scrollbar-hide"
+          style={{ scrollSnapType: "x mandatory" }}
+        >
+          {services.map((service, i) => (
             <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 30 }}
+              key={i}
+              initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-card border border-border rounded-3xl p-8 hover:shadow-xl hover:border-primary/20 transition-all duration-500"
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: 0.1 + i * 0.07 }}
+              className={`relative flex-shrink-0 rounded-2xl overflow-hidden flex flex-col justify-between scroll-snap-align-start
+                ${service.featured
+                  ? "w-[180px] h-[220px] md:w-[210px] md:h-[250px]"
+                  : "w-[160px] h-[200px] md:w-[185px] md:h-[230px]"
+                }
+              `}
+              style={{ scrollSnapAlign: "start" }}
             >
-              <div className="w-16 h-16 rounded-2xl bg-muted flex items-center justify-center text-foreground mb-8 group-hover:scale-110 group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-500">
-                {service.icon}
-              </div>
-              <h3 className="text-2xl font-bold mb-4">{service.title}</h3>
-              <p className="text-muted-foreground mb-8 leading-relaxed">
-                {service.description}
-              </p>
-              <div className="flex flex-wrap gap-2 mt-auto">
-                {service.tags.map(tag => (
-                  <span key={tag} className="text-xs font-mono font-medium px-3 py-1 bg-muted text-muted-foreground rounded-full">
-                    {tag}
+              {service.featured ? (
+                /* Featured card — dark image overlay */
+                <>
+                  <img
+                    src={rafPhoto}
+                    alt="Rafi"
+                    className="absolute inset-0 w-full h-full object-cover object-top"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10" />
+                  <div className="relative z-10 p-4 flex flex-col justify-between h-full">
+                    <span className="inline-flex self-start text-[10px] font-semibold bg-white/20 text-white backdrop-blur-sm rounded-full px-2.5 py-0.5 uppercase tracking-wider">
+                      {service.category}
+                    </span>
+                    <p className="text-white font-bold text-lg leading-tight">{service.title}</p>
+                  </div>
+                </>
+              ) : (
+                /* Regular card */
+                <div className="bg-background/8 border border-background/12 hover:bg-background/14 transition-colors duration-300 rounded-2xl p-4 h-full flex flex-col justify-between cursor-default">
+                  <span className="inline-flex self-start text-[10px] font-semibold text-background/40 border border-background/15 rounded-full px-2.5 py-0.5 uppercase tracking-wider">
+                    {service.category}
                   </span>
-                ))}
-              </div>
+                  <p className="text-background font-semibold text-base leading-snug">{service.title}</p>
+                </div>
+              )}
             </motion.div>
           ))}
-        </div>
+        </motion.div>
+
       </div>
     </section>
   );
