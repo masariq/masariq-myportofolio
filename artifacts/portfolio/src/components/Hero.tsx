@@ -14,8 +14,8 @@ export function Hero() {
           transition={{ duration: 0.5 }}
           className="flex justify-center mb-10"
         >
-          <div className="flex items-center gap-2 bg-[#f5e642] text-[#1a1a1a] rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide shadow-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#1a1a1a] inline-block" />
+          <div className="flex items-center gap-2 bg-green-500/15 border border-green-500/30 text-green-700 dark:text-green-400 rounded-full px-4 py-1.5 text-xs font-semibold tracking-wide shadow-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-green-500 animate-pulse inline-block" />
             Available for Remote Work
           </div>
         </motion.div>
