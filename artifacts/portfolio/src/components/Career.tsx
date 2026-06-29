@@ -1,19 +1,47 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Globe, Clock, Coffee, MapPin } from "lucide-react";
-import { SiSlack, SiNotion, SiGithub, SiFigma } from "react-icons/si";
+import {
+  SiSlack, SiNotion, SiGithub, SiFigma,
+  SiOpenai, SiGooglegemini, SiClaude, SiReplit,
+  SiAffinity, SiCanva,
+} from "react-icons/si";
+
+const tools: Array<{ label: string; icon?: React.ElementType; text?: string }> = [
+  { label: "Slack",    icon: SiSlack },
+  { label: "Notion",   icon: SiNotion },
+  { label: "GitHub",   icon: SiGithub },
+  { label: "Figma",    icon: SiFigma },
+  { label: "Cursor",   text: "⌘" },
+  { label: "ChatGPT",  icon: SiOpenai },
+  { label: "Gemini",   icon: SiGooglegemini },
+  { label: "Claude",   icon: SiClaude },
+  { label: "Replit",   icon: SiReplit },
+  { label: "Affinity", icon: SiAffinity },
+  { label: "Canva",    icon: SiCanva },
+  { label: "CapCut",   text: "CC" },
+];
+
+const marqueeItems = [...tools, ...tools];
 
 export function Career() {
+  const [paused, setPaused] = useState(false);
+
   return (
     <section id="career" className="py-24 bg-foreground text-background">
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 gap-16">
-          
+
           <div className="max-w-2xl">
-            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Remote Ready. <br/>Globally Focused.</h2>
+            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
+              Remote Ready. <br />Globally Focused.
+            </h2>
             <p className="text-background/70 text-lg mb-10 max-w-lg">
-              Operating seamlessly across time zones. Equipped with the latest async communication tools and a proven track record of delivering high-quality work without geographical constraints.
+              Operating seamlessly across time zones. Equipped with the latest async
+              communication tools and a proven track record of delivering high-quality
+              work without geographical constraints.
             </p>
-            
+
             <div className="grid grid-cols-2 gap-8 mb-12">
               <div>
                 <div className="flex items-center gap-3 text-background/50 font-mono text-sm mb-2">
@@ -40,16 +68,54 @@ export function Career() {
                 <div className="text-xl font-medium">Full-time / Contract</div>
               </div>
             </div>
-            
+
+            {/* Tech Stack & Tools — scrolling marquee */}
             <div className="pt-8 border-t border-background/20">
-              <p className="text-sm text-background/50 font-mono mb-4 uppercase tracking-widest">Tech Stack & Tools</p>
-              <div className="flex flex-wrap gap-6 text-background/80">
-                <SiSlack size={28} className="hover:text-white transition-colors" />
-                <SiNotion size={28} className="hover:text-white transition-colors" />
-                <SiGithub size={28} className="hover:text-white transition-colors" />
-                <SiFigma size={28} className="hover:text-white transition-colors" />
-                {/* Additional custom tool representations could go here */}
-                <div className="font-bold font-serif text-2xl hover:text-white transition-colors">Cursor</div>
+              <p className="text-sm text-background/50 font-mono mb-6 uppercase tracking-widest">
+                Tech Stack & Tools
+              </p>
+
+              <div
+                className="relative overflow-hidden"
+                onMouseEnter={() => setPaused(true)}
+                onMouseLeave={() => setPaused(false)}
+              >
+                {/* fade edges */}
+                <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 z-10 bg-gradient-to-r from-foreground to-transparent" />
+                <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 z-10 bg-gradient-to-l from-foreground to-transparent" />
+
+                <motion.div
+                  className="flex gap-8 w-max"
+                  animate={{ x: ["0%", "-50%"] }}
+                  transition={{
+                    duration: 30,
+                    ease: "linear",
+                    repeat: Infinity,
+                  }}
+                  style={{ animationPlayState: paused ? "paused" : "running" }}
+                  {...(paused ? { animate: false } : {})}
+                >
+                  {marqueeItems.map((tool, i) => {
+                    const Icon = tool.icon;
+                    return (
+                      <div
+                        key={i}
+                        className="flex items-center gap-2.5 text-background/75 hover:text-background transition-colors flex-shrink-0"
+                      >
+                        {Icon ? (
+                          <Icon size={22} />
+                        ) : (
+                          <span className="font-bold font-mono text-base leading-none w-[22px] text-center">
+                            {tool.text}
+                          </span>
+                        )}
+                        <span className="text-sm font-medium whitespace-nowrap">
+                          {tool.label}
+                        </span>
+                      </div>
+                    );
+                  })}
+                </motion.div>
               </div>
             </div>
           </div>
