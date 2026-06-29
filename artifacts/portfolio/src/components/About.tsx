@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Download, ArrowRight, ArrowLeft, Plus, Minus } from "lucide-react";
 import rafPhoto from "@assets/photo_website_rafi_1782623162685.png";
@@ -29,6 +29,50 @@ const stats = [
     description: "Based on client feedback collected across all completed projects.",
   },
 ];
+
+function useCountUp(target: number, started: boolean, duration = 1800) {
+  const [count, setCount] = useState(0);
+  const rafRef = useRef<number>(0);
+  useEffect(() => {
+    if (!started) return;
+    const startTime = performance.now();
+    const tick = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const eased = 1 - Math.pow(1 - progress, 3);
+      setCount(Math.round(eased * target));
+      if (progress < 1) rafRef.current = requestAnimationFrame(tick);
+    };
+    rafRef.current = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(rafRef.current);
+  }, [started, target, duration]);
+  return count;
+}
+
+function StatCard({ stat, started }: { stat: typeof stats[0]; started: boolean }) {
+  const match = stat.value.match(/^(\d+)([+%]?)$/);
+  const target = match ? parseInt(match[1], 10) : 0;
+  const suffix = match ? match[2] : "";
+  const count = useCountUp(target, started);
+  return (
+    <motion.div
+      variants={itemVariants}
+      className="bg-muted/50 border border-border rounded-3xl p-6 flex flex-col justify-between min-h-[160px]"
+    >
+      <div className="flex items-baseline gap-2 mb-3">
+        <span className="text-4xl font-bold tracking-tight text-foreground leading-none">
+          {count}{suffix}
+        </span>
+        <span className="text-sm text-muted-foreground font-medium">
+          {stat.unit}
+        </span>
+      </div>
+      <p className="text-xs text-muted-foreground leading-relaxed">
+        {stat.description}
+      </p>
+    </motion.div>
+  );
+}
 
 const experiences = [
   {
@@ -75,6 +119,19 @@ const itemVariants = {
 export function About() {
   const [expanded, setExpanded] = useState(false);
   const [openExp, setOpenExp] = useState<string | null>(null);
+  const [statsStarted, setStatsStarted] = useState(false);
+  const statsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const el = statsRef.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setStatsStarted(true); observer.disconnect(); } },
+      { threshold: 0.3 }
+    );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
 
   const toggleExp = (id: string) => setOpenExp((prev) => (prev === id ? null : id));
 
@@ -124,27 +181,12 @@ export function About() {
 
               {/* Right — 2×2 stat grid */}
               <motion.div
+                ref={statsRef}
                 variants={itemVariants}
                 className="grid grid-cols-2 gap-5"
               >
                 {stats.map((stat) => (
-                  <motion.div
-                    key={stat.label}
-                    variants={itemVariants}
-                    className="bg-muted/50 border border-border rounded-3xl p-6 flex flex-col justify-between min-h-[160px]"
-                  >
-                    <div className="flex items-baseline gap-2 mb-3">
-                      <span className="text-4xl font-bold tracking-tight text-foreground leading-none">
-                        {stat.value}
-                      </span>
-                      <span className="text-sm text-muted-foreground font-medium">
-                        {stat.unit}
-                      </span>
-                    </div>
-                    <p className="text-xs text-muted-foreground leading-relaxed">
-                      {stat.description}
-                    </p>
-                  </motion.div>
+                  <StatCard key={stat.label} stat={stat} started={statsStarted} />
                 ))}
               </motion.div>
             </motion.div>
