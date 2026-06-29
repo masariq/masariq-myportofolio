@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Code2, Share2, ArrowUpRight } from "lucide-react";
+import { Code2, Share2, Lightbulb, ArrowUpRight } from "lucide-react";
 
 const services = [
   {
@@ -37,34 +37,122 @@ const services = [
   },
 ];
 
+const summaryCards = [
+  {
+    icon: Code2,
+    title: "Web Design & Development",
+    description: "Custom, high-performance websites built for modern brands.",
+  },
+  {
+    icon: Share2,
+    title: "Social Media Management",
+    description: "On-brand content and strategy that grows real audiences.",
+  },
+  {
+    icon: Lightbulb,
+    title: "Digital Strategy",
+    description: "End-to-end planning that connects your brand to the right people.",
+  },
+];
+
+const marqueeKeywords = [
+  "Web Design",
+  "Social Media",
+  "Content Creation",
+  "Landing Pages",
+  "Digital Strategy",
+  "Instagram",
+  "TikTok",
+  "React & Next.js",
+  "Figma",
+  "Brand Identity",
+  "SEO & Performance",
+  "Content Calendars",
+];
+
 export function Services() {
   const [active, setActive] = useState(services[0].id);
   const current = services.find((s) => s.id === active)!;
+
+  const marqueeItems = [...marqueeKeywords, ...marqueeKeywords];
 
   return (
     <section id="services" className="py-28 bg-foreground text-background overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 max-w-5xl">
 
-        {/* Header */}
+        {/* ── TOP: centered badge + heading ── */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-14"
+          className="text-center mb-14"
         >
-          <span className="text-xs font-semibold text-background/40 uppercase tracking-widest block mb-5">
-            Core Competencies
+          <span className="inline-block text-xs font-semibold text-background/40 uppercase tracking-widest border border-background/15 rounded-full px-4 py-1.5 mb-6">
+            Services
           </span>
           <h2 className="text-[clamp(2rem,5vw,3.6rem)] font-bold leading-[1.08] tracking-[-0.03em] mb-3">
             An integrated approach<br />to digital presence.
           </h2>
-          <p className="text-[clamp(1.2rem,2.5vw,1.6rem)] font-light text-background/40 leading-snug">
-            I build platforms and manage your brand's<br className="hidden md:block" /> digital presence end-to-end.
+          <p className="text-[clamp(1rem,2vw,1.3rem)] font-light text-background/40 leading-snug">
+            I build platforms and manage your brand's digital presence end-to-end.
           </p>
         </motion.div>
 
-        {/* Tab Icons */}
+        {/* ── 3 summary cards ── */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10"
+        >
+          {summaryCards.map((card) => {
+            const Icon = card.icon;
+            return (
+              <div
+                key={card.title}
+                className="bg-background/6 border border-background/12 rounded-2xl p-6 flex flex-col gap-4"
+              >
+                <div className="w-9 h-9 rounded-xl bg-background/12 flex items-center justify-center flex-shrink-0">
+                  <Icon size={18} className="text-background" strokeWidth={1.8} />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-background mb-1 leading-snug">
+                    {card.title}
+                  </p>
+                  <p className="text-xs text-background/50 leading-relaxed">
+                    {card.description}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </motion.div>
+
+        {/* ── Marquee ── */}
+        <div className="relative mb-14 overflow-hidden">
+          {/* fade edges */}
+          <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-r from-foreground to-transparent" />
+          <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-16 z-10 bg-gradient-to-l from-foreground to-transparent" />
+
+          <motion.div
+            animate={{ x: ["0%", "-50%"] }}
+            transition={{ duration: 28, ease: "linear", repeat: Infinity }}
+            className="flex gap-6 w-max"
+          >
+            {marqueeItems.map((kw, i) => (
+              <span
+                key={i}
+                className="text-sm font-medium text-background/45 whitespace-nowrap border border-background/12 rounded-full px-4 py-1.5"
+              >
+                {kw}
+              </span>
+            ))}
+          </motion.div>
+        </div>
+
+        {/* ── Tab Icons (unchanged) ── */}
         <motion.div
           initial={{ opacity: 0, y: 16 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +186,7 @@ export function Services() {
           })}
         </motion.div>
 
-        {/* Animated Content Panel */}
+        {/* ── Animated Content Panel (unchanged) ── */}
         <AnimatePresence mode="wait">
           <motion.div
             key={active}
