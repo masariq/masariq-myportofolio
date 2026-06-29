@@ -19,7 +19,7 @@ export function Career() {
             </p>
 
             {/* ── 4-column info card ── */}
-            <div className="rounded-2xl border border-background/10 bg-background/8 shadow-lg mb-12 overflow-hidden">
+            <div className="rounded-2xl border border-background/10 bg-background/8 shadow-lg mb-12 overflow-hidden max-w-2xl mx-auto">
               <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 divide-x-0 md:divide-x divide-background/10">
                 {[
                   { icon: Clock,  label: "TIMEZONE",     value: "GMT+7 · Flexible Overlap" },
