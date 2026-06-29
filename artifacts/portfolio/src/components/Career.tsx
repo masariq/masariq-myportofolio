@@ -8,24 +8,27 @@ export function Career() {
       <div className="container mx-auto px-6 md:px-12">
         <div className="grid grid-cols-1 gap-16">
 
+          {/* Heading + paragraph — left-aligned */}
           <div className="max-w-2xl">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">
               Remote Ready. <br />Globally Focused.
             </h2>
-            <p className="text-background/70 text-lg mb-10 max-w-lg">
+            <p className="text-background/70 text-lg max-w-lg">
               Operating seamlessly across time zones. Equipped with the latest async
               communication tools and a proven track record of delivering high-quality
               work without geographical constraints.
             </p>
+          </div>
 
-            {/* ── 4-column info card ── */}
-            <div className="rounded-2xl border border-background/10 bg-background/8 shadow-lg mb-12 overflow-hidden max-w-2xl mx-auto">
+          {/* ── 4-column info card — centered ── */}
+          <div className="flex justify-center">
+            <div className="rounded-2xl border border-background/10 bg-background/8 shadow-lg overflow-hidden w-full max-w-2xl">
               <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 divide-x-0 md:divide-x divide-background/10">
                 {[
-                  { icon: Clock,  label: "TIMEZONE",     value: "GMT+7 · Flexible Overlap" },
-                  { icon: MapPin, label: "BASE",          value: "Central Java, Indonesia" },
-                  { icon: Globe,  label: "LANGUAGES",     value: "Indonesian, English" },
-                  { icon: Coffee, label: "AVAILABILITY",  value: "Full-time / Contract" },
+                  { icon: Clock,  label: "TIMEZONE",    value: "GMT+7 · Flexible Overlap" },
+                  { icon: MapPin, label: "BASE",         value: "Central Java, Indonesia" },
+                  { icon: Globe,  label: "LANGUAGES",    value: "Indonesian, English" },
+                  { icon: Coffee, label: "AVAILABILITY", value: "Full-time / Contract" },
                 ].map(({ icon: Icon, label, value }) => (
                   <div key={label} className="flex flex-col gap-2.5 px-7 py-6">
                     <Icon size={17} className="text-background/40" strokeWidth={1.6} />
@@ -39,7 +42,6 @@ export function Career() {
                 ))}
               </div>
             </div>
-
           </div>
 
         </div>
