@@ -18,30 +18,25 @@ export function Career() {
               work without geographical constraints.
             </p>
 
-            <div className="grid grid-cols-2 gap-8 mb-12">
-              <div>
-                <div className="flex items-center gap-3 text-background/50 font-mono text-sm mb-2">
-                  <Clock size={16} /> TIMEZONE
-                </div>
-                <div className="text-xl font-medium">Flexible / Async</div>
-              </div>
-              <div>
-                <div className="flex items-center gap-3 text-background/50 font-mono text-sm mb-2">
-                  <MapPin size={16} /> BASE
-                </div>
-                <div className="text-xl font-medium">Global Digital Nomad</div>
-              </div>
-              <div>
-                <div className="flex items-center gap-3 text-background/50 font-mono text-sm mb-2">
-                  <Globe size={16} /> LANGUAGES
-                </div>
-                <div className="text-xl font-medium">English (Native)</div>
-              </div>
-              <div>
-                <div className="flex items-center gap-3 text-background/50 font-mono text-sm mb-2">
-                  <Coffee size={16} /> AVAILABILITY
-                </div>
-                <div className="text-xl font-medium">Full-time / Contract</div>
+            {/* ── 4-column info card ── */}
+            <div className="rounded-2xl border border-background/10 bg-background/8 shadow-lg mb-12 overflow-hidden">
+              <div className="grid grid-cols-2 md:grid-cols-4 divide-y md:divide-y-0 divide-x-0 md:divide-x divide-background/10">
+                {[
+                  { icon: Clock,  label: "TIMEZONE",     value: "GMT+7 · Flexible Overlap" },
+                  { icon: MapPin, label: "BASE",          value: "Central Java, Indonesia" },
+                  { icon: Globe,  label: "LANGUAGES",     value: "Indonesian, English" },
+                  { icon: Coffee, label: "AVAILABILITY",  value: "Full-time / Contract" },
+                ].map(({ icon: Icon, label, value }) => (
+                  <div key={label} className="flex flex-col gap-2.5 px-7 py-6">
+                    <Icon size={17} className="text-background/40" strokeWidth={1.6} />
+                    <span className="text-[10px] font-semibold tracking-widest uppercase text-background/40 font-mono">
+                      {label}
+                    </span>
+                    <span className="text-[15px] font-semibold text-background leading-snug">
+                      {value}
+                    </span>
+                  </div>
+                ))}
               </div>
             </div>
 
