@@ -6,9 +6,9 @@ export function Career() {
   return (
     <section id="career" className="py-24 bg-foreground text-background">
       <div className="container mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <div className="grid grid-cols-1 gap-16">
           
-          <div>
+          <div className="max-w-2xl">
             <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Remote Ready. <br/>Globally Focused.</h2>
             <p className="text-background/70 text-lg mb-10 max-w-lg">
               Operating seamlessly across time zones. Equipped with the latest async communication tools and a proven track record of delivering high-quality work without geographical constraints.
@@ -52,41 +52,6 @@ export function Career() {
                 <div className="font-bold font-serif text-2xl hover:text-white transition-colors">Cursor</div>
               </div>
             </div>
-          </div>
-          
-          <div className="relative">
-            <motion.div 
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.7 }}
-              className="bg-background/10 backdrop-blur-sm border border-background/20 rounded-3xl p-8 md:p-12"
-            >
-              <h3 className="text-2xl font-bold mb-8">Professional Experience</h3>
-              
-              <div className="space-y-8">
-                <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:bottom-0 before:w-px before:bg-background/20">
-                  <div className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-primary" />
-                  <div className="text-sm font-mono text-primary mb-1">2022 - Present</div>
-                  <h4 className="text-xl font-bold mb-1">Independent Digital Specialist</h4>
-                  <p className="text-background/60">Partnering with global brands to deliver web platforms and viral social campaigns.</p>
-                </div>
-                
-                <div className="relative pl-8 before:absolute before:left-0 before:top-2 before:bottom-0 before:w-px before:bg-background/20">
-                  <div className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-background/50" />
-                  <div className="text-sm font-mono text-background/50 mb-1">2020 - 2022</div>
-                  <h4 className="text-xl font-bold mb-1">Lead Frontend Developer</h4>
-                  <p className="text-background/60">TechNova Solutions • Remote</p>
-                </div>
-                
-                <div className="relative pl-8">
-                  <div className="absolute left-[-4px] top-2 w-2 h-2 rounded-full bg-background/50" />
-                  <div className="text-sm font-mono text-background/50 mb-1">2018 - 2020</div>
-                  <h4 className="text-xl font-bold mb-1">Content Creator & Editor</h4>
-                  <p className="text-background/60">MediaFlow Agency • Remote</p>
-                </div>
-              </div>
-            </motion.div>
           </div>
 
         </div>
