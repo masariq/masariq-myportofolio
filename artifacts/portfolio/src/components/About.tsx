@@ -95,34 +95,31 @@ export function About() {
               {/* Left — black profile card */}
               <motion.div
                 variants={itemVariants}
-                className="bg-foreground text-background rounded-3xl overflow-hidden flex flex-col justify-between min-h-[420px]"
+                className="bg-foreground text-background rounded-3xl p-7 flex flex-col justify-between min-h-[380px]"
               >
-                {/* Photo — full width, no cropping */}
-                <div className="w-full h-[260px] overflow-hidden flex items-end justify-center">
-                  <img
-                    src={rafPhoto}
-                    alt="Rafi"
-                    className="w-full h-full object-contain object-bottom"
-                  />
-                </div>
-
-                {/* Text + button */}
-                <div className="p-7 pt-5">
-                  <h3 className="text-xl font-bold text-background mb-2 leading-snug">
+                <div>
+                  <div className="w-14 h-14 rounded-2xl overflow-hidden border-2 border-background/20 mb-5 flex-shrink-0">
+                    <img
+                      src={rafPhoto}
+                      alt="Rafi"
+                      className="w-full h-full object-cover object-top"
+                    />
+                  </div>
+                  <h3 className="text-xl font-bold text-background mb-3 leading-snug">
                     I'm Rafi
                   </h3>
-                  <p className="text-sm text-background/60 leading-relaxed mb-6">
+                  <p className="text-sm text-background/60 leading-relaxed">
                     A digital specialist based in Central Java, Indonesia — passionate about
                     crafting beautiful websites and building social media presences that make
                     brands stand out globally.
                   </p>
-                  <button
-                    onClick={() => setExpanded(true)}
-                    className="w-full bg-background text-foreground text-sm font-semibold py-3.5 rounded-2xl hover:bg-background/90 transition-all active:scale-[0.98] cursor-pointer"
-                  >
-                    About Me
-                  </button>
                 </div>
+                <button
+                  onClick={() => setExpanded(true)}
+                  className="mt-8 w-full bg-background text-foreground text-sm font-semibold py-3.5 rounded-2xl hover:bg-background/90 transition-all active:scale-[0.98] cursor-pointer"
+                >
+                  About Me
+                </button>
               </motion.div>
 
               {/* Right — 2×2 stat grid */}
