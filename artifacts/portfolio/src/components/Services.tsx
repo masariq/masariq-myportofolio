@@ -1,6 +1,28 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Code2, Share2, Lightbulb, ArrowUpRight } from "lucide-react";
+import {
+  SiSlack, SiNotion, SiGithub, SiFigma,
+  SiOpenai, SiGooglegemini, SiClaude, SiReplit,
+  SiAffinity, SiCanva,
+} from "react-icons/si";
+
+const tools: Array<{ label: string; icon?: React.ElementType; text?: string }> = [
+  { label: "Slack",    icon: SiSlack },
+  { label: "Notion",   icon: SiNotion },
+  { label: "GitHub",   icon: SiGithub },
+  { label: "Figma",    icon: SiFigma },
+  { label: "Cursor",   text: "⌘" },
+  { label: "ChatGPT",  icon: SiOpenai },
+  { label: "Gemini",   icon: SiGooglegemini },
+  { label: "Claude",   icon: SiClaude },
+  { label: "Replit",   icon: SiReplit },
+  { label: "Affinity", icon: SiAffinity },
+  { label: "Canva",    icon: SiCanva },
+  { label: "CapCut",   text: "CC" },
+];
+
+const marqueeTools = [...tools, ...tools];
 
 const services = [
   {
@@ -72,6 +94,7 @@ const marqueeKeywords = [
 
 export function Services() {
   const [active, setActive] = useState(services[0].id);
+  const [paused, setPaused] = useState(false);
   const current = services.find((s) => s.id === active)!;
 
   const marqueeItems = [...marqueeKeywords, ...marqueeKeywords];
@@ -256,6 +279,49 @@ export function Services() {
             </div>
           </motion.div>
         </AnimatePresence>
+
+        {/* ── Tech Stack & Tools marquee ── */}
+        <div className="mt-14 pt-10 border-t border-background/20">
+          <p className="text-sm text-background/50 font-mono mb-6 uppercase tracking-widest">
+            Tech Stack & Tools
+          </p>
+
+          <div
+            className="relative overflow-hidden"
+            onMouseEnter={() => setPaused(true)}
+            onMouseLeave={() => setPaused(false)}
+          >
+            <div className="pointer-events-none absolute left-0 top-0 bottom-0 w-10 z-10 bg-gradient-to-r from-foreground to-transparent" />
+            <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 z-10 bg-gradient-to-l from-foreground to-transparent" />
+
+            <motion.div
+              className="flex gap-10 w-max"
+              animate={paused ? {} : { x: ["0%", "-50%"] }}
+              transition={{ duration: 30, ease: "linear", repeat: Infinity }}
+            >
+              {marqueeTools.map((tool, i) => {
+                const Icon = tool.icon;
+                return (
+                  <div
+                    key={i}
+                    className="flex items-center gap-2.5 text-background/75 hover:text-background transition-colors flex-shrink-0"
+                  >
+                    {Icon ? (
+                      <Icon size={22} />
+                    ) : (
+                      <span className="font-bold font-mono text-base leading-none w-[22px] text-center">
+                        {tool.text}
+                      </span>
+                    )}
+                    <span className="text-sm font-medium whitespace-nowrap">
+                      {tool.label}
+                    </span>
+                  </div>
+                );
+              })}
+            </motion.div>
+          </div>
+        </div>
 
       </div>
     </section>
