@@ -159,7 +159,8 @@ export function About() {
                     <img
                       src={rafPhoto}
                       alt="Rafi"
-                      className="w-full h-full object-cover object-top"
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: "center 8%" }}
                     />
                   </div>
                   <h3 className="text-xl font-bold text-background mb-3 leading-snug">
@@ -326,12 +327,12 @@ export function About() {
               {/* Featured image */}
               <motion.div
                 variants={itemVariants}
-                className="relative w-full aspect-[16/7] rounded-3xl overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,0.14)] mt-14"
+                className="relative w-full rounded-3xl overflow-hidden shadow-[0_24px_80px_rgba(0,0,0,0.14)] mt-14 bg-muted/30 flex justify-center"
               >
                 <img
                   src={rafPhoto}
                   alt="Rafi — Digital Specialist"
-                  className="w-full h-full object-cover object-top"
+                  className="w-auto max-h-[420px] object-contain"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-8">
