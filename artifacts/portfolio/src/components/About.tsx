@@ -334,10 +334,18 @@ export function About() {
                   alt="Rafi — Digital Specialist"
                   className="w-auto max-h-[420px] object-contain"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent" />
-                <div className="absolute bottom-6 left-8">
-                  <p className="text-white text-base font-semibold">Rafi</p>
-                  <p className="text-white/60 text-sm">Website Design & Social Media</p>
+                {/* Floating info card */}
+                <div className="absolute bottom-6 left-6 right-6 md:left-8 md:right-auto bg-foreground/90 backdrop-blur-md rounded-2xl px-5 py-4 shadow-xl flex flex-col gap-3 md:max-w-xs">
+                  <div>
+                    <p className="text-background text-base font-bold leading-tight">Rafi</p>
+                    <p className="text-background/55 text-sm mt-0.5">Website Design & Social Media</p>
+                  </div>
+                  <button
+                    onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
+                    className="self-start inline-flex items-center gap-2 bg-background text-foreground text-xs font-semibold px-4 py-2 rounded-full hover:bg-background/90 active:scale-[0.97] transition-all cursor-pointer"
+                  >
+                    Contact Me
+                  </button>
                 </div>
               </motion.div>
             </motion.div>
