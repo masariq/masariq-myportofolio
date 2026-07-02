@@ -1,0 +1,46 @@
+Build the detail page for "Content Planning & Management System" 
+project, following the same layout pattern as the other project 
+detail pages (sidebar left with title/description/meta info, main 
+content area right with scrollable image gallery).
+
+SIDEBAR CONTENT:
+- Title: "Content Planning & Management System"
+- Description: "A structured content management workflow designed to 
+  plan, organize, and track social media content across multiple 
+  platforms. Built to demonstrate a systematic approach to content 
+  calendars, campaign planning, and cross-platform consistency — the 
+  same workflow used to manage real client accounts across Instagram, 
+  TikTok, and Facebook."
+- Category: Social Media Management
+- Client: Concept / Internal System
+- Date: 2022 – Present
+- Role: Social Media Manager · Content Strategist
+
+MAIN CONTENT — IMAGE GALLERY (vertical stacked, full-width, rounded 
+corners, consistent spacing, same style as hero images on other 
+project pages):
+
+1. Dashboard Home — overview mockup: minimalist beige workspace with 
+   welcome banner, to-do checklist ("Reply to messages", "Plan 
+   content", "Review analytics"), moodboard image grid (8 photos), 
+   and quick-access menu tiles (Content Calendar, Campaigns, Analytics, 
+   Client Assets)
+
+2. Content Calendar view — monthly calendar grid showing scheduled 
+   posts per platform (color-coded tags per platform: Instagram, 
+   TikTok, Facebook), with a few example post entries per day
+
+3. Content Idea Bank / Post Tracker — table view tracking post status 
+   from "Idea → Draft → Scheduled → Published", with columns for 
+   platform, format (Reel, Carousel, Story), and caption notes
+
+4. Platform breakdown section — grid showing content organized by 
+   platform, each with post thumbnails and quick-add buttons
+
+Each gallery image should maintain the same soft neutral color palette 
+(cream, beige, black text), elegant serif headings, and clean grid 
+alignment throughout — consistent visual identity across the whole 
+gallery.
+
+Keep the left sidebar sticky/fixed while scrolling through the gallery, 
+same as other project detail pages.

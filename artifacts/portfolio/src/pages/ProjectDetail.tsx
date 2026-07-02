@@ -19,7 +19,7 @@ export default function ProjectDetail() {
     );
   }
 
-  const categoryLabel = project.category === "Web" ? "Website" : "Social Media";
+  const categoryLabel = project.badge ?? (project.category === "Web" ? "Website" : "Social Media");
 
   return (
     <div className="min-h-screen bg-background">
