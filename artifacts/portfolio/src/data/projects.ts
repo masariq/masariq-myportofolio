@@ -38,8 +38,9 @@ export const projects: Project[] = [
     liveUrl: "https://sudutloka.com",
     images: [
       "/sudutloka.png",
-      "https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1400&q=85",
-      "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=1400&q=85",
+      "/sudutloka-products.png",
+      "/sudutloka-collections.png",
+      "/sudutloka-contact.png",
     ],
   },
   {
