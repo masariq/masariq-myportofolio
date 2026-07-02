@@ -11,12 +11,11 @@ export function Navbar() {
     { name: "Services", href: "#services", id: "services" },
     { name: "Portfolio", href: "#portfolio", id: "portfolio" },
     { name: "Career", href: "#career", id: "career" },
-    { name: "Experiences", href: "#testimonials", id: "testimonials" },
   ];
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["home", "services", "portfolio", "career", "testimonials", "contact"];
+      const sections = ["home", "services", "portfolio", "career", "contact"];
       for (const id of sections.reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY >= el.offsetTop - 120) {
