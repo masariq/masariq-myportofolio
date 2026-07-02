@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send } from "lucide-react";
+import { Send, Mail } from "lucide-react";
 import { SiInstagram, SiWhatsapp, SiFacebook, SiX } from "react-icons/si";
 
 function LinkedInIcon() {
@@ -43,6 +43,7 @@ export function Contact() {
                   { icon: LinkedInIcon, label: "LinkedIn",  href: "https://www.linkedin.com/in/rafi-ariq-maulana" },
                   { icon: SiFacebook,   label: "Facebook",  href: "https://www.facebook.com/share/1BjwDLQ9Tt/?mibextid=wwwXlfr" },
                   { icon: SiX,          label: "X",         href: "https://x.com/masariqaja" },
+                  { icon: Mail,         label: "Email",     href: "mailto:rafiariqmaulana48@gmail.com" },
                 ].map(({ icon: Icon, label, href }) => (
                   <a
                     key={label}
