@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
-import { SiInstagram, SiThreads, SiFacebook, SiX } from "react-icons/si";
+import { SiInstagram, SiWhatsapp, SiFacebook, SiX } from "react-icons/si";
 
 function LinkedInIcon() {
   return (
@@ -39,7 +39,7 @@ export function Contact() {
               <div className="flex items-center gap-3">
                 {[
                   { icon: SiInstagram,  label: "Instagram", href: "https://instagram.com/" },
-                  { icon: SiThreads,    label: "Threads",   href: "https://threads.net/" },
+                  { icon: SiWhatsapp,   label: "WhatsApp",  href: "https://wa.me/6282800739469" },
                   { icon: LinkedInIcon, label: "LinkedIn",  href: "https://linkedin.com/" },
                   { icon: SiFacebook,   label: "Facebook",  href: "https://facebook.com/" },
                   { icon: SiX,          label: "X",         href: "https://x.com/" },
