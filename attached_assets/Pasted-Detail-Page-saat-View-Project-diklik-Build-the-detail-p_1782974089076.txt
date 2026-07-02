@@ -1,0 +1,45 @@
+Detail Page (saat "View Project" diklik)
+Build the detail page for "Design & Dev Journal" project, following 
+the same sidebar + scrollable gallery layout pattern as the other 
+project detail pages.
+
+SIDEBAR CONTENT:
+- Title: "Design & Dev Journal"
+- Description: "A concept editorial blog exploring web design trends, 
+  front-end development practices, and AI-assisted workflows. Built 
+  to demonstrate front-end development skill combined with an editorial 
+  design sensibility — bold typography, structured content hierarchy, 
+  and a modern minimalist aesthetic."
+- Category: Website Design & Development
+- Client: Concept Project
+- Date: 2025
+- Role: Web Design · Front-end Development
+
+MAIN CONTENT — IMAGE GALLERY (vertical stacked, full-width, rounded 
+corners, consistent spacing, matching style of other project pages):
+
+1. Blog Homepage — top nav bar with logo "Design & Dev Journal", nav 
+   links (Articles, Tutorials, Resources, About), search icon and 
+   "Menu" button top right. Below: bold headline "Best of the Week" 
+   with "See all posts" link. Large featured article card (photo + 
+   date tag + category pill + title overlay) beside a smaller ad-style 
+   promo card and a secondary article card with "See all picks" link.
+
+2. Article List View — grid of 4-6 article preview cards, each with 
+   thumbnail image, category tag, title, and short excerpt, arranged 
+   in a clean 2-3 column layout
+
+3. Single Article Page — large hero image, article title in bold 
+   serif/sans headline, author + date byline, body text in clean 
+   readable column width with pull-quote styling
+
+4. Newsletter/Footer section — simple email signup block with heading 
+   "Stay updated on design & dev", input field + subscribe button, 
+   footer links and social icons
+
+Use a consistent black, white, and single accent color (soft pastel 
+like the reference) throughout the gallery. Bold modern sans-serif 
+typography, black pill-shaped tags, generous white space.
+
+Keep the left sidebar sticky/fixed while scrolling through the gallery, 
+same as other project detail pages.

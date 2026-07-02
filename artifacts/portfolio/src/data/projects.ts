@@ -63,7 +63,10 @@ export const projects: Project[] = [
     process:
       "The concept was designed to feel like a premium digital magazine: clean white space, bold black headlines, and a layout that lets content breathe. Built with React and Tailwind CSS, the project explores how editorial design principles — borrowed from print — can elevate a web publication. AI-assisted workflows were integrated into the content pipeline to streamline research, drafting, and SEO optimisation.",
     images: [
-      "/design-dev-journal.jpg",
+      "/ddj-homepage.svg",
+      "/ddj-articles.svg",
+      "/ddj-article.svg",
+      "/ddj-newsletter.svg",
     ],
   },
   {
