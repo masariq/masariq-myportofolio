@@ -12,16 +12,35 @@ function LinkedInIcon() {
 }
 
 export function Contact() {
-  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success">("idle");
+  const [formStatus, setFormStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setFormStatus("submitting");
-    // Simulate form submission
-    setTimeout(() => {
-      setFormStatus("success");
-      setTimeout(() => setFormStatus("idle"), 3000);
-    }, 1500);
+    const form = e.currentTarget;
+    const data = {
+      name: (form.elements.namedItem("name") as HTMLInputElement).value,
+      email: (form.elements.namedItem("email") as HTMLInputElement).value,
+      message: (form.elements.namedItem("message") as HTMLTextAreaElement).value,
+    };
+    try {
+      const res = await fetch("https://formspree.io/f/mdarpnad", {
+        method: "POST",
+        headers: { "Accept": "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (res.ok) {
+        setFormStatus("success");
+        form.reset();
+        setTimeout(() => setFormStatus("idle"), 5000);
+      } else {
+        setFormStatus("error");
+        setTimeout(() => setFormStatus("idle"), 5000);
+      }
+    } catch {
+      setFormStatus("error");
+      setTimeout(() => setFormStatus("idle"), 5000);
+    }
   };
 
   return (
@@ -65,7 +84,8 @@ export function Contact() {
                   <label htmlFor="name" className="block text-sm font-medium text-muted-foreground mb-2">Name</label>
                   <input 
                     type="text" 
-                    id="name" 
+                    id="name"
+                    name="name"
                     required
                     className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="John Doe"
@@ -76,7 +96,8 @@ export function Contact() {
                   <label htmlFor="email" className="block text-sm font-medium text-muted-foreground mb-2">Email</label>
                   <input 
                     type="email" 
-                    id="email" 
+                    id="email"
+                    name="email"
                     required
                     className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="john@example.com"
@@ -86,7 +107,8 @@ export function Contact() {
                 <div>
                   <label htmlFor="message" className="block text-sm font-medium text-muted-foreground mb-2">Message</label>
                   <textarea 
-                    id="message" 
+                    id="message"
+                    name="message"
                     rows={4}
                     required
                     className="w-full bg-background border border-border rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all resize-none"
@@ -96,13 +118,25 @@ export function Contact() {
 
                 <button 
                   type="submit" 
-                  disabled={formStatus !== "idle"}
+                  disabled={formStatus === "submitting"}
                   className="w-full bg-foreground text-background py-4 rounded-xl font-medium flex items-center justify-center gap-2 hover:bg-foreground/90 transition-colors disabled:opacity-70"
                 >
                   {formStatus === "idle" && <><Send size={18} /> Send Message</>}
                   {formStatus === "submitting" && "Sending..."}
-                  {formStatus === "success" && "Message Sent!"}
+                  {formStatus === "success" && <><Send size={18} /> Send Message</>}
+                  {formStatus === "error" && <><Send size={18} /> Send Message</>}
                 </button>
+
+                {formStatus === "success" && (
+                  <p className="text-sm text-green-600 font-medium text-center">
+                    ✓ Message sent! I'll get back to you soon.
+                  </p>
+                )}
+                {formStatus === "error" && (
+                  <p className="text-sm text-red-500 font-medium text-center">
+                    Something went wrong. Please try again or email me directly.
+                  </p>
+                )}
               </form>
             </div>
 
