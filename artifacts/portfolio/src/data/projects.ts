@@ -3,6 +3,7 @@ export type Project = {
   slug: string;
   title: string;
   category: "Web" | "Social";
+  badge?: string;
   image: string;
   role: string;
   year: string;
@@ -69,23 +70,24 @@ export const projects: Project[] = [
   },
   {
     id: 3,
-    slug: "lifestyle-brand-instagram",
-    title: "Lifestyle Brand Instagram",
+    slug: "content-planning-management-system",
+    title: "Content Planning & Management System",
     category: "Social",
-    image: "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=800&q=80",
+    badge: "Social Media Management",
+    image: "/content-planning-dashboard.png",
     role: "Social Media Manager",
-    year: "2023 – 2024",
-    description: "Content strategy, feed design, and community growth for a lifestyle brand.",
-    extra: "Instagram · TikTok",
+    year: "2022 – Present",
+    description: "A structured content calendar and workflow system used to plan, schedule, and manage multi-platform social media content.",
+    extra: "Notion · Content Calendar",
     iconColor: "#F59E0B",
     client: "Aura Living",
-    date: "October 2023",
+    date: "2022 – Present",
     shortBio:
-      "End-to-end social media management for Aura Living — a premium lifestyle brand. Delivered a cohesive visual identity across Instagram and TikTok, growing their audience from 4K to 28K followers.",
+      "A structured content planning and workflow system built to manage multi-platform social media content at scale — covering ideation, scheduling, visual planning, and performance tracking across Instagram and TikTok.",
     process:
-      "Our approach was content-first: we defined Aura's visual language (warm neutrals, lifestyle photography, minimal typography), then built a 30-day content calendar and batch-produced assets biweekly. Reels drove the bulk of organic growth — we A/B tested hooks and thumbnails relentlessly. Community management and story polls kept engagement rates well above the industry average.",
+      "The system was designed around a single Notion workspace: a master content calendar with status columns, a moodboard grid for visual consistency checks, and a weekly to-do checklist for batch production days. Templates reduced time-to-publish significantly, and a monthly review cadence kept strategy aligned with performance data. The result was a repeatable, low-friction workflow that scaled across multiple brand accounts.",
     images: [
-      "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=1400&q=85",
+      "/content-planning-dashboard.png",
       "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=1400&q=85",
       "https://images.unsplash.com/photo-1614027164847-1b28cfe1df60?w=1400&q=85",
     ],

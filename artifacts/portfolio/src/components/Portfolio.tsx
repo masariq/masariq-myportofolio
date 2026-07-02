@@ -74,7 +74,7 @@ export function Portfolio() {
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                   <span className="absolute top-3 left-3 px-3 py-1 rounded-full bg-white/80 backdrop-blur-sm text-[11px] font-semibold text-gray-800 shadow-sm">
-                    {categoryLabel[project.category]}
+                    {project.badge ?? categoryLabel[project.category]}
                   </span>
                 </div>
 
