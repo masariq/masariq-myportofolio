@@ -38,11 +38,11 @@ export function Contact() {
               
               <div className="flex items-center gap-3">
                 {[
-                  { icon: SiInstagram,  label: "Instagram", href: "https://instagram.com/" },
+                  { icon: SiInstagram,  label: "Instagram", href: "https://www.instagram.com/rafiariqm/" },
                   { icon: SiWhatsapp,   label: "WhatsApp",  href: "https://wa.me/6282800739469" },
-                  { icon: LinkedInIcon, label: "LinkedIn",  href: "https://linkedin.com/" },
-                  { icon: SiFacebook,   label: "Facebook",  href: "https://facebook.com/" },
-                  { icon: SiX,          label: "X",         href: "https://x.com/" },
+                  { icon: LinkedInIcon, label: "LinkedIn",  href: "https://www.linkedin.com/in/rafi-ariq-maulana" },
+                  { icon: SiFacebook,   label: "Facebook",  href: "https://www.facebook.com/share/1BjwDLQ9Tt/?mibextid=wwwXlfr" },
+                  { icon: SiX,          label: "X",         href: "https://x.com/masariqaja" },
                 ].map(({ icon: Icon, label, href }) => (
                   <a
                     key={label}
