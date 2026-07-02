@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <!-- Background -->
+  <rect width="1200" height="600" fill="#FAFAFA"/>
+
+  <!-- Newsletter section -->
+  <rect x="0" y="0" width="1200" height="380" fill="#0A0A0A"/>
+
+  <!-- Decorative elements -->
+  <circle cx="100" cy="190" r="180" fill="white" fill-opacity="0.03"/>
+  <circle cx="1100" cy="190" r="200" fill="white" fill-opacity="0.03"/>
+  <circle cx="600" cy="380" r="260" fill="white" fill-opacity="0.02"/>
+
+  <!-- Small pill label -->
+  <rect x="470" y="60" width="260" height="28" rx="14" fill="white" fill-opacity="0.08"/>
+  <text x="600" y="79" font-size="12" fill="white" text-anchor="middle" font-weight="600" letter-spacing="1">✦ WEEKLY NEWSLETTER</text>
+
+  <!-- Main headline -->
+  <text x="600" y="155" font-size="44" font-weight="900" fill="white" text-anchor="middle" letter-spacing="-1.5">Stay updated on</text>
+  <text x="600" y="208" font-size="44" font-weight="900" fill="#A5D6A7" text-anchor="middle" letter-spacing="-1.5">design &amp; dev</text>
+
+  <!-- Sub text -->
+  <text x="600" y="258" font-size="16" fill="#999" text-anchor="middle">Get the best articles, tutorials, and AI workflow insights</text>
+  <text x="600" y="278" font-size="16" fill="#999" text-anchor="middle">delivered to your inbox every week. No spam, ever.</text>
+
+  <!-- Email input + subscribe button -->
+  <rect x="300" y="305" width="440" height="52" rx="26" fill="white" fill-opacity="0.08" stroke="white" stroke-opacity="0.15" stroke-width="1"/>
+  <text x="380" y="336" font-size="14" fill="#777">your@email.com</text>
+  <rect x="756" y="305" width="160" height="52" rx="26" fill="#A5D6A7"/>
+  <text x="836" y="336" font-size="14" font-weight="700" fill="#0A0A0A" text-anchor="middle">Subscribe →</text>
+
+  <!-- Social proof -->
+  <text x="600" y="382" font-size="12" fill="#555" text-anchor="middle">Join 2,400+ readers · Unsubscribe anytime</text>
+
+  <!-- Footer -->
+  <rect x="0" y="380" width="1200" height="220" fill="#F5F5F5"/>
+  <line x1="0" y1="380" x2="1200" y2="380" stroke="#E5E5E5" stroke-width="1"/>
+
+  <!-- Footer logo -->
+  <text x="80" y="430" font-size="16" font-weight="800" fill="#0A0A0A" letter-spacing="-0.5">Design &amp; Dev Journal</text>
+  <text x="80" y="452" font-size="12" fill="#999">A concept editorial blog by Rafi</text>
+  <text x="80" y="470" font-size="12" fill="#999">Web Design · Front-end Development · 2025</text>
+
+  <!-- Footer nav columns -->
+  <text x="420" y="420" font-size="11" fill="#999" font-weight="600" letter-spacing="0.8">CONTENT</text>
+  <text x="420" y="442" font-size="13" fill="#555">Articles</text>
+  <text x="420" y="462" font-size="13" fill="#555">Tutorials</text>
+  <text x="420" y="482" font-size="13" fill="#555">Resources</text>
+  <text x="420" y="502" font-size="13" fill="#555">Newsletter</text>
+
+  <text x="600" y="420" font-size="11" fill="#999" font-weight="600" letter-spacing="0.8">TOPICS</text>
+  <text x="600" y="442" font-size="13" fill="#555">Design Systems</text>
+  <text x="600" y="462" font-size="13" fill="#555">Front-end Dev</text>
+  <text x="600" y="482" font-size="13" fill="#555">AI Workflows</text>
+  <text x="600" y="502" font-size="13" fill="#555">Typography</text>
+
+  <text x="780" y="420" font-size="11" fill="#999" font-weight="600" letter-spacing="0.8">CONNECT</text>
+  <!-- Social icon pills -->
+  <rect x="780" y="432" width="68" height="26" rx="13" fill="#E8E8E8"/>
+  <text x="814" y="449" font-size="12" fill="#333" text-anchor="middle" font-weight="600">Twitter</text>
+  <rect x="858" y="432" width="80" height="26" rx="13" fill="#E8E8E8"/>
+  <text x="898" y="449" font-size="12" fill="#333" text-anchor="middle" font-weight="600">LinkedIn</text>
+  <rect x="780" y="468" width="72" height="26" rx="13" fill="#E8E8E8"/>
+  <text x="816" y="485" font-size="12" fill="#333" text-anchor="middle" font-weight="600">GitHub</text>
+  <rect x="862" y="468" width="76" height="26" rx="13" fill="#E8E8E8"/>
+  <text x="900" y="485" font-size="12" fill="#333" text-anchor="middle" font-weight="600">Dribbble</text>
+
+  <!-- Footer divider + copyright -->
+  <line x1="80" y1="540" x2="1120" y2="540" stroke="#E0E0E0" stroke-width="1"/>
+  <text x="80" y="568" font-size="11" fill="#BBBBBB">© 2025 Design &amp; Dev Journal. All rights reserved.</text>
+  <text x="1120" y="568" font-size="11" fill="#BBBBBB" text-anchor="end">Made with React &amp; Tailwind</text>
+</svg>
