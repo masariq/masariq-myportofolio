@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 860" width="1200" height="860" font-family="'Inter','Helvetica Neue',Arial,sans-serif">
+  <!-- Background -->
+  <rect width="1200" height="860" fill="#FAFAFA"/>
+
+  <!-- Top nav -->
+  <rect width="1200" height="56" fill="#FFFFFF"/>
+  <line x1="0" y1="56" x2="1200" y2="56" stroke="#E5E5E5" stroke-width="1"/>
+  <text x="40" y="35" font-size="16" font-weight="800" fill="#0A0A0A" letter-spacing="-0.5">Design &amp; Dev Journal</text>
+  <text x="300" y="35" font-size="13" fill="#555" font-weight="500">Articles</text>
+  <text x="380" y="35" font-size="13" fill="#555" font-weight="500">Tutorials</text>
+  <text x="465" y="35" font-size="13" fill="#555" font-weight="500">Resources</text>
+  <text x="548" y="35" font-size="13" fill="#555" font-weight="500">About</text>
+  <rect x="1112" y="14" width="60" height="28" rx="14" fill="#0A0A0A"/>
+  <text x="1142" y="33" font-size="12" font-weight="600" fill="#fff" text-anchor="middle">Menu</text>
+
+  <!-- Hero image -->
+  <rect x="0" y="56" width="1200" height="340" fill="#C8E6C9"/>
+  <!-- Image texture hint -->
+  <rect x="0" y="56" width="1200" height="340" fill="url(#heroGrad)"/>
+  <defs>
+    <linearGradient id="heroGrad" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#B2DFDB" stop-opacity="0.6"/>
+      <stop offset="100%" stop-color="#80CBC4" stop-opacity="0.8"/>
+    </linearGradient>
+  </defs>
+  <!-- Abstract shapes on hero -->
+  <circle cx="200" cy="220" r="80" fill="white" fill-opacity="0.12"/>
+  <circle cx="1000" cy="180" r="120" fill="white" fill-opacity="0.08"/>
+  <rect x="480" y="100" width="240" height="240" rx="24" fill="white" fill-opacity="0.10"/>
+
+  <!-- Category pill over hero -->
+  <rect x="40" y="80" width="84" height="24" rx="12" fill="#0A0A0A"/>
+  <text x="82" y="96" font-size="11" fill="white" text-anchor="middle" font-weight="600">Front-end</text>
+
+  <!-- Article content area — centered column -->
+  <!-- Back link -->
+  <text x="200" y="430" font-size="12" fill="#888" font-weight="500">← Back to Articles</text>
+
+  <!-- Article headline -->
+  <text x="200" y="490" font-size="40" font-weight="900" fill="#0A0A0A" letter-spacing="-1.5">React Patterns You Should</text>
+  <text x="200" y="538" font-size="40" font-weight="900" fill="#0A0A0A" letter-spacing="-1.5">Know in 2025</text>
+
+  <!-- Author byline -->
+  <circle cx="214" cy="576" r="14" fill="#C8E6C9"/>
+  <text x="214" y="581" font-size="11" text-anchor="middle" fill="#555" font-weight="700">R</text>
+  <text x="234" y="574" font-size="13" fill="#333" font-weight="600">Rafi</text>
+  <text x="234" y="590" font-size="12" fill="#999">Web Design &amp; Front-end Dev</text>
+  <text x="340" y="574" font-size="12" fill="#CCCCCC">·</text>
+  <text x="354" y="574" font-size="12" fill="#999">May 12, 2025</text>
+  <text x="436" y="574" font-size="12" fill="#CCCCCC">·</text>
+  <text x="450" y="574" font-size="12" fill="#999">7 min read</text>
+
+  <!-- Divider -->
+  <line x1="200" y1="610" x2="1000" y2="610" stroke="#E5E5E5" stroke-width="1"/>
+
+  <!-- Article body -->
+  <text x="200" y="645" font-size="16" fill="#333" line-spacing="8">From compound components to render props — the patterns that make your React</text>
+  <text x="200" y="668" font-size="16" fill="#333">code readable, maintainable, and a joy to work with. Let's break down each one</text>
+  <text x="200" y="691" font-size="16" fill="#333">with real-world examples you can start using today.</text>
+
+  <!-- Pull quote -->
+  <rect x="200" y="715" width="5" height="80" rx="2" fill="#0A0A0A"/>
+  <text x="222" y="748" font-size="18" font-weight="700" fill="#0A0A0A" font-style="italic">"Good patterns aren't about cleverness —</text>
+  <text x="222" y="774" font-size="18" font-weight="700" fill="#0A0A0A" font-style="italic">they're about clarity for the next developer."</text>
+
+  <!-- More body text -->
+  <text x="200" y="820" font-size="16" fill="#555">The compound component pattern lets you build flexible APIs that feel natural to</text>
+  <text x="200" y="843" font-size="16" fill="#555">consume. Instead of passing dozens of props, you compose your components...</text>
+</svg>
